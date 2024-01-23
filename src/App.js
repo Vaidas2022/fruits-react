@@ -1,4 +1,5 @@
 import './App.css';
+import ComparisonTable from './ComparisonTable';
 import ProductCard from './ProductCard';
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <ProductCard key={product.name} product={product} />
         ))}
       </div>
-
+          <ComparisonTable products={products} />
     </div>
   );
 }
