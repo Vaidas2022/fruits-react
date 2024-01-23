@@ -15,7 +15,7 @@ Norėdami pradėti, įsitikinkite, kad turite įdiegtas šias priklausomybes:
 Klonuokite repozitoriją ir įdiekite priklausomybes:
 
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/Vaidas2022/fruits-react.git
 cd product-comparison-app
 npm install
 ```
