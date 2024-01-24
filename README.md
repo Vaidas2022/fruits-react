@@ -16,7 +16,7 @@ Klonuokite repozitoriją ir įdiekite priklausomybes:
 
 ```bash
 git clone https://github.com/Vaidas2022/fruits-react.git
-cd product-comparison-app
+cd fruits-react
 npm install
 ```
 
