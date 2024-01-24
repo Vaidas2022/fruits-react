@@ -55,6 +55,7 @@ function App() {
     .then( d =>   setProducts( d ))
     .catch( e => console.error(e));
 
+    console.log("Promisas paleistas");
   }, [] );
   
 
