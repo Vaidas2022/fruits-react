@@ -2,48 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import ComparisonTable from './ComparisonTable';
 import ProductCard from './ProductCard';
-
-const busimiDuomenys = [
-  {
-    name: "Cherry",
-    price: "$1.99",
-    imageUrl: "/images/cherries.png",
-  },
-  {
-    name: "Avocado",
-    price: "$1.99",
-    imageUrl: "/images/avocados.png",
-  },
-  {
-    name: "Bananas",
-    price: "$1.99",
-    imageUrl: "/images/bananas.png",
-  },
-  {
-    name: "Watermelon",
-    price: "$1.99",
-    imageUrl: "/images/watermelon.png",
-  }
-];
-
-
-
-const fetchData = () => {
-  return new Promise(  (resolve, reject) => {
-
-    setTimeout( ()=> {
-      const success = Math.random() > 0.3; //70% tikimybė, kad true 
-      if(success){
-        resolve(busimiDuomenys);
-      } else{
-        reject("Duomenų užkrauti nepavyko");
-      }
-
-    }, 1000 );
-
-  } );
-}
-
+import config from './config';
 
 
 function App() {
@@ -51,8 +10,9 @@ function App() {
 
   useEffect( () => {
 
-    fetchData()
-    .then( d =>   setProducts( d ))
+    fetch( config.API_ROOT_PATH +"/all" )
+    .then( response => response.json() )
+    .then( json => setProducts( json ))
     .catch( e => console.error(e));
 
     console.log("Promisas paleistas");
